@@ -1533,12 +1533,10 @@ export class KlApp {
             );
         };
 
-        const fileUi = this.embed
-            ? null
-            : new KL.FileUi({
+        const fileUi = new KL.FileUi({
                   klRootEl: this.klRootEl,
-                  projectStore: projectStore!,
-                  getProject: () => this.klCanvas.getProject(),
+                //   projectStore: projectStore!,
+                //   getProject: () => this.klCanvas.getProject(),
                   exportType: exportType,
                   onExportTypeChange: (type) => {
                       exportType = type;
@@ -1568,7 +1566,7 @@ export class KlApp {
                       applyUncommitted();
                       copyToClipboard();
                   },
-                  saveReminder: p.saveReminder,
+                //   saveReminder: p.saveReminder,
                   applyUncommitted: () => applyUncommitted(),
               });
 

@@ -14,8 +14,8 @@ import copyImg from '/src/app/img/ui/copy.svg';
 
 export type TFileUiParams = {
     klRootEl: HTMLElement;
-    projectStore: ProjectStore;
-    getProject: () => IKlProject;
+    // projectStore: ProjectStore;
+    // getProject: () => IKlProject;
     exportType: TExportType;
     onExportTypeChange: (type: TExportType) => void;
     onFileSelect: (fileList: FileList, optionStr: TDropOption) => void;
@@ -24,7 +24,7 @@ export type TFileUiParams = {
     onShareImage: (callback: () => void) => void;
     onUpload: () => void;
     onCopyToClipboard: () => void;
-    saveReminder: SaveReminder;
+    // saveReminder: SaveReminder;
     applyUncommitted: () => void;
 };
 
@@ -199,17 +199,17 @@ export class FileUi {
                 return el;
             };
 
-            this.fileBrowserStorage = new BrowserStorageUi(
-                p.projectStore,
-                p.getProject,
-                p.saveReminder,
-                p.klRootEl,
-                this.applyUncommitted,
-            );
-            BB.css(this.fileBrowserStorage.getElement(), {
-                //background: 'red',
-                margin: '10px',
-            });
+            // this.fileBrowserStorage = new BrowserStorageUi(
+            //     p.projectStore,
+            //     p.getProject,
+            //     p.saveReminder,
+            //     p.klRootEl,
+            //     this.applyUncommitted,
+            // );
+            // BB.css(this.fileBrowserStorage.getElement(), {
+            //     //background: 'red',
+            //     margin: '10px',
+            // });
 
             const saveRow = BB.el({
                 content: [saveButton, exportTypeSelect.getElement()],
@@ -230,7 +230,7 @@ export class FileUi {
                 BB.el({ css: { clear: 'both' } }),
 
                 createSpacer(),
-                this.fileBrowserStorage.getElement(),
+                // this.fileBrowserStorage.getElement(),
                 createSpacer(),
                 uploadImgurButton,
             ]);
