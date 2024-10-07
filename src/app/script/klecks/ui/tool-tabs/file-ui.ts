@@ -178,13 +178,13 @@ export class FileUi {
                 p.onCopyToClipboard();
             };
 
-            const saveNote = BB.el({
-                className: 'kl-toolspace-note',
-                textContent: LANG('file-no-autosave'),
-                css: {
-                    margin: '10px 10px 0 10px',
-                },
-            });
+            // const saveNote = BB.el({
+            //     className: 'kl-toolspace-note',
+            //     textContent: LANG('file-no-autosave'),
+            //     css: {
+            //         margin: '10px 10px 0 10px',
+            //     },
+            // });
 
             const createSpacer = () => {
                 const el = document.createElement('div');
@@ -218,7 +218,7 @@ export class FileUi {
 
             //actual structure
             BB.append(fileMenu, [
-                saveNote,
+                // saveNote,
                 newButton,
                 importWrapper,
                 BB.el({ css: { clear: 'both' } }),
