@@ -12,6 +12,7 @@
     "start": "parcel serve src/index.html --no-cache",
     "build": "parcel build src/index.html",
     "build:embed": "parcel build src/embed.ts",
+    "build:bridge": "parcel build src/bridge.html",
     "build:help": "parcel build src/help.html --public-url .",
     "lang:add": "node src/languages/generate.js add",
     "lang:sync": "node src/languages/generate.js sync",
