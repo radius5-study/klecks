@@ -72,6 +72,7 @@ importFilters();
 type KlAppOptionsEmbed = {
     url: string;
     onSubmit: (onSuccess: () => void, onError: () => void) => void;
+    onClose?: () => void;
 };
 
 export type TKlAppParams = {
@@ -996,9 +997,6 @@ export class KlApp {
         let toolspaceTopRow;
         if (this.embed) {
             toolspaceTopRow = new EmbedToolspaceTopRow({
-                onHelp: () => {
-                    showIframeModal(this.embed!.url + '/help.html', !!this.embed);
-                },
                 onSubmit: () => {
                     applyUncommitted();
                     const onFailure = () => {
@@ -1063,10 +1061,9 @@ export class KlApp {
                         },
                     });
                 },
-                onLeftRight: () => {
-                    this.uiState = this.uiState === 'left' ? 'right' : 'left';
-                    this.updateUi();
-                },
+                onClose: () => {
+                    this.embed!.onClose?.();
+                }
             });
         } else {
             toolspaceTopRow = new KL.ToolspaceTopRow({

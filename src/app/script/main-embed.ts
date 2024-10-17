@@ -11,6 +11,7 @@ export interface IEmbedParams {
     project?: IKlProject;
     psdBlob?: Blob;
     onSubmit: (onSuccess: () => void, onError: () => void) => void;
+    onClose?: () => void;
     embedUrl: string;
     logoImg?: any;
     bottomBar?: HTMLElement;
@@ -58,6 +59,7 @@ export class Embed {
                 embed: {
                     url: this.p.embedUrl,
                     onSubmit: this.p.onSubmit,
+                    onClose: this.p.onClose,
                 },
             });
             saveReminder.init();

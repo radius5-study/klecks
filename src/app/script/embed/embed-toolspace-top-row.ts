@@ -15,7 +15,7 @@ export class EmbedToolspaceTopRow {
 
     // ----------------------------------- public -----------------------------------
 
-    constructor(p: { onSubmit: () => void; onLeftRight: () => void; onHelp: () => void }) {
+    constructor(p: { onSubmit: () => void; onClose: () => void }) {
         this.rootEl = BB.el({
             className: 'kl-toolspace-row',
             css: {
@@ -93,21 +93,25 @@ export class EmbedToolspaceTopRow {
         });
         submitButton.el.style.width = '45px';
 
-        const helpButton = createButton({
-            onClick: p.onHelp,
-            title: LANG('help'),
-            image: helpImg,
+        const closeButton = createButton({
+            onClick: p.onClose,
+            title: LANG('modal-close'),
+            content: BB.el({
+                content: LANG('modal-close'),
+                className: 'toolspace-row-button__submit',
+                css: {
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%',
+                    height: '100%',
+                },
+            }),
             contain: true,
         });
+        closeButton.el.style.width = '45px';
 
-        const leftRightButton = createButton({
-            onClick: p.onLeftRight,
-            title: LANG('switch-ui-left-right'),
-            image: uiSwapImg,
-            contain: true,
-        });
-
-        this.rootEl.append(submitButton.el, leftRightButton.el, helpButton.el);
+        this.rootEl.append(submitButton.el, closeButton.el);
     }
 
     getElement(): HTMLElement {

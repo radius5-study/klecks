@@ -26,6 +26,9 @@ window.addEventListener('message', (e) => {
           onError()
         }
       },
+      onClose: () => {
+        window.parent.postMessage({ type: 'close' }, '*')
+      }
     })
     const image = new Image()
     image.src = defaultData.toString()
@@ -35,7 +38,7 @@ window.addEventListener('message', (e) => {
         height: size.height,
         layers: [
           {
-            name: 'Background',
+            name: 'Image',
             isVisible: true,
             opacity: 1,
             mixModeStr: 'source-over',
