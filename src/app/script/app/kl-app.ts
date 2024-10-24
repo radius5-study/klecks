@@ -1062,7 +1062,18 @@ export class KlApp {
                     });
                 },
                 onClose: () => {
-                    this.embed!.onClose?.();
+                    KL.popup({
+                        target: this.klRootEl,
+                        message: LANG('close-prompt'),
+                        buttons: [LANG('close'), 'Cancel'],
+                        callback: async (result) => {
+                            if (result !== LANG('close')) {
+                                return;
+                            }
+
+                            this.embed!.onClose?.()
+                        },
+                    });
                 }
             });
         } else {

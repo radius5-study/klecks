@@ -165,20 +165,20 @@ export class SaveReminder {
             }, 1000 * 5);
         }
 
-        // confirmation dialog when closing tab
-        function onBeforeUnload(e: BeforeUnloadEvent) {
-            e.preventDefault();
-            e.returnValue = '';
-        }
+        // // confirmation dialog when closing tab
+        // function onBeforeUnload(e: BeforeUnloadEvent) {
+        //     e.preventDefault();
+        //     e.returnValue = '';
+        // }
 
-        this.history.addListener(() => {
-            const historyIndex = this.history.getCurrentIndex();
-            if (this.lastSavedHistoryIndex !== historyIndex) {
-                window.onbeforeunload = onBeforeUnload;
-            } else {
-                window.onbeforeunload = null;
-            }
-        });
+        // this.history.addListener(() => {
+        //     const historyIndex = this.history.getCurrentIndex();
+        //     if (this.lastSavedHistoryIndex !== historyIndex) {
+        //         window.onbeforeunload = onBeforeUnload;
+        //     } else {
+        //         window.onbeforeunload = null;
+        //     }
+        // });
 
         if (this.changeTitle) {
             document.addEventListener('visibilitychange', () => {

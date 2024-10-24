@@ -1435,6 +1435,15 @@
     original: 'Loading app',
     value: 'Loading app'
   },
+  'close': {
+    original: 'Close',
+    value: '閉じる'
+  },
+  'close-prompt': {
+    hint: 'confirmation dialog',
+    original: 'Close canvas?',
+    value: 'キャンバスを閉じますか?'
+  },
   'embed-init-waiting': {
     hint: 'The app is loaded, but it’s still waiting for image',
     original: 'Waiting for image',

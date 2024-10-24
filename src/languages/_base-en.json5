@@ -915,6 +915,16 @@ renaming keys across language files:
     "value": "Submitting"
   },
 
+  "close": "Close",
+  "close-title": {
+    "hint": "tooltip when hovering \"Close\" button",
+    "value": "Close"
+  },
+  "close-prompt": {
+    "hint": "Dialog asking for confirmation",
+    "value": "Close canvas?"
+  },
+
   "embed-init-loading": {
     "hint": "when opening the app",
     "value": "Loading app"
